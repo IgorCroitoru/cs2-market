@@ -24,7 +24,8 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+This project aims to create a functional CS2 (Counter-Strike 2) marketplace where users can buy, sell, and trade in-game items. The backend is powered by the [Nest](https://github.com/nestjs/nest) framework, leveraging its modular architecture to manage user accounts, handle inventory, facilitate trades, and manage bots that automate trade processes.
+This project is a work in progress, currently in its early stages of development, and marks my first experience building an application with NestJS.
 
 ## Installation
 
@@ -58,16 +59,3 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
