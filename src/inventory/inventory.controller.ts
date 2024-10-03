@@ -1,4 +1,4 @@
-import { Controller, Get, HttpException, HttpStatus, Inject, Req, Res, UseFilters, UseGuards, UseInterceptors } from "@nestjs/common";
+import { Controller, Get, HttpException, HttpStatus, Inject, Logger, Req, Res, UseFilters, UseGuards, UseInterceptors } from "@nestjs/common";
 import { InventoryService } from "./inventory.service";
 import { AuthenticatedGuard } from "src/auth/guards/custom.guard";
 import { Response, Request } from "express";
@@ -10,6 +10,7 @@ import { ResponseWrapperInterceptor } from "src/interceptors/custom-response";
 @UseInterceptors(ResponseWrapperInterceptor)
 @Controller('inventory')
 export default class InventoryController{
+    private logger = new Logger(InventoryController.name)
     constructor(private readonly inventoryService: InventoryService){
 
     }
@@ -20,7 +21,7 @@ export default class InventoryController{
          const inventory = await this.inventoryService.refreshInventory(req.user);
          return inventory
       } catch (e) {
-        console.error(e);
+        this.logger.error(e)
         throw e
       }
     }
@@ -31,7 +32,7 @@ export default class InventoryController{
             const inventory = await this.inventoryService.requestInventory(req.user.userId)
             return inventory
         }catch(e){
-          console.error(e)
+          this.logger.error(e)
             throw e
         }
     }

@@ -6,7 +6,7 @@ import { TypeModel } from "src/item-types/type.model";
 import { CategoryModel } from "src/category/category.model";
 
 export interface ProductCreationAttr {
-    listed?: boolean
+    // listed?: boolean
     price: number,
     bot_item_id: number
 }
@@ -29,11 +29,11 @@ export class ProductModel extends Model<ProductModel,ProductCreationAttr>{
 
    
    
-    @Column({
-        type:DataType.BOOLEAN,
-        defaultValue: false
-    })
-    listed:boolean
+    // @Column({
+    //     type:DataType.BOOLEAN,
+    //     defaultValue: false
+    // })
+    // listed:boolean
 
     @Column({
         type: DataType.DECIMAL(10, 2),
